@@ -1,0 +1,170 @@
+:root {
+  --primary: darkorchid;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.device {
+  width: 90%;
+  max-width: 1440px;
+  height: 90%;
+  border: 5px solid var(--primary);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+}
+.device-bezel-top {
+  height: 20px;
+  width: 100%;
+  background-color: var(--primary);
+
+  display: none;
+}
+.device-bezel-bottom {
+  width: 100%;
+  background-color: var(--primary);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+}
+.device-home-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: white;
+  margin: 1rem;
+}
+.device::after {
+  content: "Laptop L 1440px";
+  padding: 1rem 2rem;
+  background-color: var(--primary);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --primary: darkgreen;
+  }
+  .device {
+    /* width: 90%; */
+    max-width: calc(1024px - 5rem);
+  }
+  .device::after {
+    content: "Laptop 1024px";
+  }
+  .device-bezel-bottom {
+    display: none;
+  }
+  .device-bezel-top {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --primary: darkorange;
+  }
+  .device {
+    /* width: 90%; */
+    max-width: calc(768px - 5rem);
+  }
+  .device::after {
+    content: "Tablet 768px";
+  }
+  .device-bezel-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .device-bezel-top {
+    display: initial;
+  }
+}
+@media (max-width: 425px) {
+  :root {
+    --primary: red;
+  }
+  .device {
+    /* width: 90%; */
+    max-width: calc(425px - 5rem);
+  }
+  .device::after {
+    content: "Mobile L 425px";
+  }
+  .device-bezel-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .device-home-btn{
+    margin: .5rem;
+  }
+  .device-bezel-top {
+    display: initial;
+  }
+}
+@media (max-width: 375px) {
+  :root {
+    --primary: greenyellow;
+  }
+  .device {
+    /* width: 90%; */
+    max-width: calc(375px - 3rem);
+  }
+  .device::after {
+    content: "Mobile M 375px";
+  }
+  .device-bezel-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .device-home-btn{
+    margin: .5rem;
+  }
+  .device-bezel-top {
+    display: initial;
+  }
+}
+@media (max-width: 320px) {
+  :root {
+    --primary: orangered;
+  }
+  .device {
+    
+    width: 320px;
+    
+  }
+  .device::after {
+    content: "Mobile S 320px";
+  }
+  .device-bezel-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .device-home-btn{
+    margin: .5rem;
+  }
+  .device-bezel-top {
+    display: initial;
+  }
+}
